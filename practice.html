@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  
+  <script>
+
+let age = 4;
+let gender = 'Male'
+let price  = 1200;
+if(gender == 'female'){
+  price = price - (price*50/100);
+  alert(price);
+}
+else if(age < 5 && gender == 'Male')
+alert('free cloths');
+else if(age >= 5 && age <= 8 && gender == 'Male'){
+  price = price/2;
+alert( `Age above 5 but less than 8 ${price}`)}
+else if(age > 65 && gender == 'Male'){
+  price = price*30/100;
+  alert(`Age above 65 $${price}`);
+
+}
+else{
+  alert('Kuch nhi');
+}
+
+  </script>
+</body>
+</html>
