@@ -18,17 +18,52 @@
   <h1>Ball Bat Stump Game
   </h1>
   
-  <button onclick="console.log('you have choosen ball');
+  <button onclick=" let userChoice1 = 'bat';
+  alert('you choose bat');
+let randomNumber1 = Math.random() * 3;
+let computerChoice1 ;
+if(randomNumber > 0 && randomNumber <= 1){
+ computerChoice = 'bat';
+alert('computer chose bat');
+}
+else if(randomNumber1 > 1 && randomNumber1<=2){  
+   computerChoice1 = 'ball';
+  alert('computer chose ball');
+}
+else{ 
+ computerChoice1 = 'stump';
+ alert('computer chose stump');}
+ if(computerChoice1 == userChoice1){
+  alert('you won');}
+   else{
+    alert('you loss , both of you chose different item');}
   
-let randomNumber = Math.random() * 3;
-if(randomNumber > 0 && randomNumber <= 1)
-console.log('computer choose bat');
-else if(randomNumber >1 &&randomNumber<=2)  
-  console.log('computer choose ball');
-else
-console.log('computer choose stump');
-  " >Ball</button>
-  <button>Bat</button>
+  " >Ball</button> 
+  <button onclick=" let userChoice = 'bat';
+  alert('you choose ball');
+ let randomNumber = Math.random() * 3;
+ let computerChoice ;
+if(randomNumber > 0 && randomNumber == 1){
+ computerChoice = 'bat';
+alert('computer chose bat');
+}
+else if(randomNumber >1 &&randomNumber<=2){  
+   computerChoice = 'ball';
+  alert('computer chose ball');
+}
+else{ 
+ computerChoice = 'stump';
+ alert('computer chose stump');}
+ if(computerChoice == userChoice){
+  alert('you won');}
+   else{
+    alert('you loss , both of you chose different item');}
+ 
+  "  
+  
+  
+  
+  >Bat</button>
   <button>Stump</button>
 </div>
 </body>
