@@ -14,48 +14,36 @@
 </head>
 <body>
 
-  <div id="maihu">
+  
   <h1>Ball Bat Stump Game
   </h1>
   
-  <button onclick=" let userChoice1 = 'ball';
+  <button onclick=" let userChoice = 'ball';
   
-  generateChoice();
- // printByAlert();
-  if(computerChoice == userChoice){
-  alert(`you won with userChoice = ${userChoice} and computerChoice = ${computerChoice}`);}
-   else{
-    alert(`you loss with Userchoice = ${userChoice} Computerchoice = ${computerChoice} `);}
+ let computerChoice = generateChoice();
+  printByAlert(computerChoice,userChoice);
+ 
   
   " >Ball</button> 
+
   <button onclick=" 
     userChoice = 'bat';
-  generateChoice();
- // printByAlert();
-  if(computerChoice == userChoice){
-  alert(`you won with userChoice = ${userChoice} and computerChoice = ${computerChoice}`);}
-   else{
-    alert(`you loss with Userchoice = ${userChoice} Computerchoice = ${computerChoice} `);}
-  "  
-  
-  
+    computerChoice = generateChoice();
+    printByAlert(computerChoice,userChoice);
+  "
   
   >Bat</button>
+
   <button
   onclick="
    userChoice = 'stump';
-
-  generateChoice();
- // printByAlert();
-  if(computerChoice == userChoice){
-  alert(`you won with userChoice = ${userChoice} and computerChoice = ${computerChoice}`);}
-   else{
-    alert(`you loss with Userchoice = ${userChoice} Computerchoice = ${computerChoice} `);}
-
+   computerChoice = generateChoice();
+   printByAlert(computerChoice,userChoice);
+ 
   ">Stump</button>
-</div>
+
 <script>
-  let computerChoice ;
+  
  
 function generateChoice(){
 
@@ -64,20 +52,23 @@ function generateChoice(){
  let randomNumber = Math.random() * 3;
 
 if(randomNumber > 0 && randomNumber == 1){
- computerChoice = 'bat';
+  
+ return `bat`;
 
 }
 else if(randomNumber >1 &&randomNumber<=2){  
-   computerChoice = 'ball';
+   
+   return `ball`;
  
 }
 else{ 
- computerChoice = 'stump';
+ 
+return `stump` ;
  }
 
 
 }
-function printByAlert(){
+function printByAlert(computerChoice,userChoice){
 if(computerChoice == userChoice){
   alert(`you won with userChoice = ${userChoice} and computerChoice = ${computerChoice}`);}
    else{
