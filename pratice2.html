@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+let number = (checkNumber(8));
+function checkNumber(number){
+  if(number % 2 == 0){
+    alert('even');
+    return number;
+    
+  }
+  else{
+    alert('odd');
+   return number;
+    
+  }
+}
+
+let number1 = checkLarger(10,1,19);
+  function checkLarger(numberA,numberB,numberC){
+
+    if(numberA > numberB && numberA > numberC){
+    alert(`Number ${numberA} larger than another numbers`);}
+  else if(numberB > numberC){
+    alert(`Number ${numberB} larger than another numbers`);
+  }
+else{
+  alert(`Number ${numberC} larger than another numbers`);
+}
+    
+  }
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>
