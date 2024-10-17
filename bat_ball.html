@@ -44,7 +44,17 @@
 
 <script>
   
- 
+  let score = {
+win: 0,
+loss: 0,
+display :function(){
+  return ` Won  = ${score.win},Lost  =  ${score.loss}
+  Game play score
+  Ready to win`;
+}
+  }
+
+
 function generateChoice(){
 
  
@@ -70,11 +80,18 @@ return `stump` ;
 }
 function printByAlert(computerChoice,userChoice){
 if(computerChoice == userChoice){
-  alert(`you won with userChoice = ${userChoice} and computerChoice = ${computerChoice}`);}
+ score.win++;
+  alert(`you won with userChoice = ${userChoice} and computerChoice = ${computerChoice}
+  score = ${score.display()}`);}
    else{
-    alert(`you loss with Userchoice = ${userChoice} Computerchoice = ${computerChoice} `);}
+    score.loss++;
+
+    alert(`you loss with Userchoice = ${userChoice} Computerchoice = ${computerChoice} 
+    score of the game => ${score.display()}`);}
 
    }
+
+   console.log(score);
 </script>
 </body>
 </html>
