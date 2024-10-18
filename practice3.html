@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+
+  <script>
+
+
+
+let product = {
+jeans : 'Black',
+shirt: 'white',
+shoes: 'red',
+display(){
+console.log(product);
+
+
+}
+};
+let product1 = {
+jeans : 'Black',
+shirt: 'white',
+shoes: 'red',
+display(){
+console.log(product1);
+
+
+}
+};
+
+let product2 = {
+jeans : 'Black',
+shirt: 'white',
+shoes: 'red',
+display(){
+console.log(product2);
+
+
+}
+
+};
+let product3 = {
+jeans : 'Black',
+shirt: 'white',
+shoes: 'redi',
+display(){
+console.log(product3);
+
+
+}
+};
+
+// let copycCompany = product;
+// console.log(product);
+// copycCompany.jeans = 'Blacku';
+// console.log(product);
+// copycCompany.shirt = 'blue';
+// console.log(product);
+// copycCompany.shoes = 'redu';
+// console.log(product);
+
+function check(product1,product2){
+// if(product1 == product2){
+// return true;
+// }
+// else{
+//   return false;
+// }
+
+if(product1.jeans != product2.jeans || product1.shirt != product2.shirt || product1.shoes != product2.shoes){
+  product1.display();
+  product2.display();
+  return 'product1 is not equal to product2';
+}
+else{
+  product1.display();
+  product2.display();
+  return 'All  clear';
+}
+}
+console.log(check(product1,product3));
+  </script>
+</body>
+</html>
