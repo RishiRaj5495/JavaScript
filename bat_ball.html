@@ -41,20 +41,36 @@
    printByAlert(computerChoice,userChoice);
  
   ">Stump</button>
+ <button onclick="
+ 
+ score.win = 0;
+score.loss = 0;
+ 
+ 
+ 
+ ">Restart</button>
 
 <script>
+
+  let score;
+ 
+  let scorestr = localStorage.getItem('score');
+  if(scorestr != undefined){
+    score = JSON.parse(scorestr);
+  }else{
+
   
-  let score = {
+ score = {
 win: 0,
 loss: 0,
-display :function(){
+
+  }}
+
+score.display = function(){
   return ` Won  = ${score.win},Lost  =  ${score.loss}
   Game play score
   Ready to win`;
 }
-  }
-
-
 function generateChoice(){
 
  
@@ -75,22 +91,24 @@ else{
  
 return `stump` ;
  }
-
-
 }
+
+
 function printByAlert(computerChoice,userChoice){
 if(computerChoice == userChoice){
  score.win++;
+ localStorage.setItem('score',JSON.stringify(score));
   alert(`you won with userChoice = ${userChoice} and computerChoice = ${computerChoice}
   score = ${score.display()}`);}
    else{
     score.loss++;
-
+    localStorage.setItem('score',JSON.stringify(score));
     alert(`you loss with Userchoice = ${userChoice} Computerchoice = ${computerChoice} 
     score of the game => ${score.display()}`);}
 
    }
-
+// localStorage.removeItem('score');
+// localStorage.removeItem('win')
    console.log(score);
 </script>
 </body>
