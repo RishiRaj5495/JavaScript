@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+
+  <script>
+
+ let jashon = {
+   name: 'mIcrosoFt',
+   revenue: 20000,
+   rating: 2.5,
+   rating_star:'******',
+   annualIncom:1000000000,
+ };
+// console.log(typeof jashon);
+// console.log(jashon);
+// let str = JSON.stringify(jashon);
+// console.log(typeof str);
+// console.log(str);
+//localStorage.setItem('name','pantaloon');
+localStorage.setItem('price','209046');
+localStorage.setItem('jashon',JSON.stringify(jashon));
+console.log(localStorage.getItem('jashon'));
+console.log(localStorage.getItem('name'));
+let jashon2 = JSON.parse(localStorage.getItem('jashon'));
+console.log(jashon2);
+console.log(localStorage.getItem('name'));
+console.log(localStorage.getItem('price'));
+  </script>
+
+
+
+
+</body>
+</html>
