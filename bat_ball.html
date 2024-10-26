@@ -8,7 +8,10 @@
   <style>
 
     #maihu{
+      display: flex;
+      align-items: center;
       text-align: center;
+      justify-content: center;
     }
   </style>
 </head>
@@ -54,23 +57,47 @@ score.loss = 0;
 
   let score;
  
-  let scorestr = localStorage.getItem('score');
+   let scorestr = localStorage.getItem('score');
   if(scorestr != undefined){
     score = JSON.parse(scorestr);
+    console.log(score);
   }else{
 
-  
  score = {
 win: 0,
 loss: 0,
+ }
+   }
+// }
+//case 2
+//     score = JSON.parse(scorestr)||
+   
+//   {
+// win: 0,
+// loss: 0,
 
-  }}
+//   }
 
-score.display = function(){
+
+
+
+
+
+
+// score.display = function(){
+//   return ` Won  = ${score.win},Lost  =  ${score.loss}
+//   Game play score
+//   Ready to win`;
+// }
+  function print(){
+  
   return ` Won  = ${score.win},Lost  =  ${score.loss}
   Game play score
   Ready to win`;
-}
+  
+  
+  
+  }
 function generateChoice(){
 
  
@@ -99,17 +126,17 @@ if(computerChoice == userChoice){
  score.win++;
  localStorage.setItem('score',JSON.stringify(score));
   alert(`you won with userChoice = ${userChoice} and computerChoice = ${computerChoice}
-  score = ${score.display()}`);}
+  score = ${[print()]}`);}
    else{
     score.loss++;
     localStorage.setItem('score',JSON.stringify(score));
     alert(`you loss with Userchoice = ${userChoice} Computerchoice = ${computerChoice} 
-    score of the game => ${score.display()}`);}
+    score of the game => ${print()}`);}
 
    }
 // localStorage.removeItem('score');
 // localStorage.removeItem('win')
-   console.log(score);
+   
 </script>
 </body>
 </html>
