@@ -20,19 +20,32 @@
   
   <h1>Ball Bat Stump Game
   </h1>
-  
-  <button onclick=" let userChoice = 'ball';
-  
- let computerChoice = generateChoice();
-  printByAlert(computerChoice,userChoice);
  
+
+
+
+  
+  <button onclick="  
+  userChoice = 'ball';
+  
+  computerChoice = generateChoice();
+  // document.querySelector('.myname').innerText = `you loss with Userchoice = ${userChoice} Computerchoice = ${computerChoice} ` ;
+  
+  let result = printByAlert(computerChoice,userChoice);
+
+  showresult(userChoice,computerChoice,result);
   
   " >Ball</button> 
 
   <button onclick=" 
     userChoice = 'bat';
     computerChoice = generateChoice();
-    printByAlert(computerChoice,userChoice);
+    // document.querySelector('.myname').innerText = `you loss with Userchoice = ${userChoice} Computerchoice = ${computerChoice} ` ;
+  
+    result = printByAlert(computerChoice,userChoice);
+     showresult(userChoice,computerChoice,result);
+
+
   "
   
   >Bat</button>
@@ -41,7 +54,11 @@
   onclick="
    userChoice = 'stump';
    computerChoice = generateChoice();
-   printByAlert(computerChoice,userChoice);
+     result = printByAlert(computerChoice,userChoice);
+      showresult(userChoice,computerChoice,result);
+  //  document.querySelector('.myname').innerText = `you loss with Userchoice = ${userChoice} Computerchoice = ${computerChoice} ` ;
+  
+   
  
   ">Stump</button>
  <button onclick="
@@ -52,11 +69,16 @@ score.loss = 0;
  
  
  ">Restart</button>
+ <h3 class="myname"></h3>
+
+
+
 
 <script>
 
-  let score;
- 
+  let score ;
+
+
    let scorestr = localStorage.getItem('score');
   if(scorestr != undefined){
     score = JSON.parse(scorestr);
@@ -81,11 +103,8 @@ loss: 0,
 
 
 
-
-
-
 // score.display = function(){
-//   return ` Won  = ${score.win},Lost  =  ${score.loss}
+//  return ` Won  = ${score.win},Lost  =  ${score.//loss}
 //   Game play score
 //   Ready to win`;
 // }
@@ -124,16 +143,33 @@ return `stump` ;
 function printByAlert(computerChoice,userChoice){
 if(computerChoice == userChoice){
  score.win++;
- localStorage.setItem('score',JSON.stringify(score));
-  alert(`you won with userChoice = ${userChoice} and computerChoice = ${computerChoice}
-  score = ${[print()]}`);}
+
+return ' you won';
+  
+  
+
+}
    else{
     score.loss++;
-    localStorage.setItem('score',JSON.stringify(score));
-    alert(`you loss with Userchoice = ${userChoice} Computerchoice = ${computerChoice} 
-    score of the game => ${print()}`);}
-
+    
+    return 'you loss';
+   
+    }
    }
+   function  showresult(userChoice,computerChoice,result){
+    localStorage.setItem('score',JSON.stringify(score));
+   alert(`${result} Userchoice = ${userChoice} Computerchoice = ${computerChoice} 
+    score of the game => ${print()}`);
+    document.querySelector('.myname').innerText =`${result} 
+    Userchoice = ${userChoice};
+    Computerchoice = ${computerChoice};
+    score board = ${print()}`;
+   }
+    
+ 
+
+
+
 // localStorage.removeItem('score');
 // localStorage.removeItem('win')
    
