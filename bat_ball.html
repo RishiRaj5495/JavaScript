@@ -13,6 +13,26 @@
       text-align: center;
       justify-content: center;
     }
+    .background-color,#restart{
+   background-color: rgb(0, 255, 13);
+
+    }
+
+#restart{
+  position: relative;
+  top: -43px;
+    width: 121px;
+    height: 110px;
+  border: solid black; 
+}
+    .image{
+       mix-blend-mode:lighten ;
+
+border-radius: 50px;
+  border: solid black;
+      height: 100px;
+
+    }
   </style>
 </head>
 <body>
@@ -21,11 +41,11 @@
   <h1>Ball Bat Stump Game
   </h1>
  
-
-
-
+ 
   
-  <button onclick="  
+  <button 
+  class="background-color"
+  onclick="
   userChoice = 'ball';
   
   computerChoice = generateChoice();
@@ -35,9 +55,11 @@
 
   showresult(userChoice,computerChoice,result);
   
-  " >Ball</button> 
+  " ><img src="image/ball image.jpg" alt="ball" class="image"></button> 
 
-  <button onclick=" 
+  <button 
+  class="background-color"
+  onclick="
     userChoice = 'bat';
     computerChoice = generateChoice();
     // document.querySelector('.myname').innerText = `you loss with Userchoice = ${userChoice} Computerchoice = ${computerChoice} ` ;
@@ -48,36 +70,41 @@
 
   "
   
-  >Bat</button>
+  ><img src="image/Bat image.jpg" alt="bat" class="image"></button>
 
   <button
+  class="background-color"
   onclick="
    userChoice = 'stump';
    computerChoice = generateChoice();
      result = printByAlert(computerChoice,userChoice);
       showresult(userChoice,computerChoice,result);
-  //  document.querySelector('.myname').innerText = `you loss with Userchoice = ${userChoice} Computerchoice = ${computerChoice} ` ;
   
    
  
-  ">Stump</button>
- <button onclick="
- 
+  ">
+ <img src="image/stump image.jpg" alt="stump" class="image"><br></button>
+ <button 
+ id="restart"
+ onclick="
  score.win = 0;
 score.loss = 0;
+ showresult();
  
  
- 
- ">Restart</button>
+ "><h1 >Restart</h1></button>
  <h3 class="myname"></h3>
-
+ <h3 class="result"></h3>
+ <h3 class="userChoice"></h3>
+<h3 class="computerChoice"></h3>
+<h3 class="score"></h3>
 
 
 
 <script>
 
   let score ;
-
+let name = 'Power game';
 
    let scorestr = localStorage.getItem('score');
   if(scorestr != undefined){
@@ -111,7 +138,7 @@ loss: 0,
   function print(){
   
   return ` Won  = ${score.win},Lost  =  ${score.loss}
-  Game play score
+  Game play score with 
   Ready to win`;
   
   
@@ -125,12 +152,12 @@ function generateChoice(){
 
 if(randomNumber > 0 && randomNumber == 1){
   
- return `bat`;
+ return '288';
 
 }
 else if(randomNumber >1 &&randomNumber<=2){  
    
-   return `ball`;
+   return 'ball';
  
 }
 else{ 
@@ -158,12 +185,32 @@ return ' you won';
    }
    function  showresult(userChoice,computerChoice,result){
     localStorage.setItem('score',JSON.stringify(score));
-   alert(`${result} Userchoice = ${userChoice} Computerchoice = ${computerChoice} 
-    score of the game => ${print()}`);
-    document.querySelector('.myname').innerText =`${result} 
-    Userchoice = ${userChoice};
-    Computerchoice = ${computerChoice};
-    score board = ${print()}`;
+  //  alert(`${result} Userchoice = ${userChoice} Computerchoice = ${computerChoice} 
+  //   score of the game => ${print()}`);
+    document.querySelector('.result').innerText =
+    result !== undefined ? `${result}`:'';
+    document.querySelector('.userChoice ').innerText =
+   userChoice !== undefined ? `Userchoice = ${userChoice}`:'';
+   document.querySelector('.computerChoice').innerText = computerChoice !== undefined ? 
+   `Computerchoice  = ${computerChoice}`:'';
+   document.querySelector('.score').innerText =
+   `score board = ${print()}`;
+
+  //  document.querySelector('.result').innerText =
+  //   `${result}`||'';
+  //   document.querySelector('.userChoice').innerText =`Userchoice = ${userChoice}`||'';
+  //  document.querySelector('.computerChoice').innerText = `Computerchoice  = ${computerChoice}`||'';
+  //  document.querySelector('.score').innerText =
+  //  `score board = ${print()}`;
+
+  alert(`${result} Userchoice = ${userChoice} Computerchoice = ${computerChoice} 
+  score of the game => ${print()}`);
+
+
+
+
+
+   
    }
     
  
