@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+
+  <style>
+
+#counter{
+height: 70px;
+width: 70px;
+font-size: 20px;
+
+
+}
+.js-even{
+  background-color: aqua;
+  color: rgb(255, 0, 200);
+}  
+.js-odd{
+  background-color: brown;
+  color: rgb(30, 210, 60);
+}
+  </style>
+</head>
+<body>
+  <h3 id="displayWishing"></h3>
+  <button id="counter" onclick="
+  button();
+  ">Count</button>
+  <script>
+    let count = localStorage.getItem('count') || 0;
+    function button(){
+let myButton = document.querySelector('#counter');
+count++;
+localStorage.setItem('count',count);
+
+if(count % 2 == 0){
+ myButton.classList.remove('js-odd');
+ myButton.classList.add('js-even');
+
+}
+else{
+myButton.classList.remove('js-even');
+ myButton.classList.add('js-odd');
+ }
+ myButton.innerText = count; 
+
+}
+
+
+
+
+
+printDay();
+function printDay(){
+  let name = 'rishil';
+let ate = new Date();
+let hours = ate.getHours();
+let heading = document.querySelector('#displayWishing');
+ if(hours < 12 && hours > 5){
+//   document.querySelector('#displayWishing').innerText = `Good Morning ${name}` ;}
+heading.innerText = 'Good Morning'; }
+else if(hours > 12 && hours < 18){
+  // document.querySelector('#displayWishing').innerText = `Good Afternoon ${name}` ;}
+  heading.innerText = 'Good Afternoon'; }
+else{
+// document.querySelector('#displayWishing').innerText = `Good Night ${name}`;}
+
+heading.innerText = 'Good Night'; }
+}
+
+
+  </script>
+</body>
+</html>
