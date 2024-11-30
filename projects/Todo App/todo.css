@@ -1,0 +1,38 @@
+#head{
+text-align: center;
+  font-family:Arial ;
+  }
+
+  #item{
+justify-content: center;
+display: grid;
+grid-template-columns:200px 150px 100px ;
+margin-bottom: 5px;
+
+}
+  .same{
+  margin-right: 10px;
+  padding: 10px 5px;
+  font-size: 15px;
+  border-radius: 10px;
+  }
+  .likho{
+  justify-content: center;
+display: grid;
+grid-template-columns: 200px 150px 100px;
+row-gap: 5px;
+  }
+.red{
+background-color: brown;
+border-radius: 10px;
+}
+#add{
+background-color: rgb(4, 124, 30);
+width:100px;
+}
+
+
+
+
+    
+  }
