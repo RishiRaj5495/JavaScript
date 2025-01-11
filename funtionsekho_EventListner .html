@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<p id="likho"> </p>
+<!-- <p id="likh"> </p> -->
+  <button id="EventListner">ClickMe</button>
+  <script>
+let sum = function(num1,num2){
+  return num1 + num2;
+}
+let sumThreeNumber = function(num1,num2,num3,sumTwoNumber){
+
+  let sum1 = sumTwoNumber(num1,num2);
+  return sumTwoNumber(sum1,num3);
+}
+console.log(sumThreeNumber(1,0,3,sum));
+
+
+// let multiply = (num1,num2) =>{
+
+// return num1 + num2 ;
+
+// }
+//   let addNumber = (num1,num2,num3,num4) =>{
+
+//     let newNumber =  num4(num1,num2) ;
+//   //  return  newNumber + newNumber;
+//   let n = multiply(3,5)
+//    return (newNumber + newNumber + 4 + n);
+//   }
+
+//console.log(addNumber(1,4,6,multiply));
+//setTimeout(addNumber,5000);{
+
+//}let character = () {
+// function discuss(){
+//   let likho = document.querySelector('#likho');
+// let nameQ  = ['Rishi = 4545','Raj = 7878','Chandra = 974'];
+// let nameAdd = '';
+// for(let i = 0 ; i < nameQ.length ; i++){
+ 
+// nameAdd = nameAdd + nameQ[i] + '\n';
+// }
+// likho.innerText = nameAdd;
+// }
+let text = () => document.querySelector("#likho").innerText =`My name is Anthony Gonsalvis ,create something new 
+// ${new Date()}
+// `;
+
+const button = document.querySelector('#EventListner');
+button.addEventListener("click", text);
+ button.addEventListener("click", discuss);
+
+
+
+
+
+let name = () => console.log(`Rishi Raj Chandra  ${new Date()}`);
+//setTimeout(name,2000); // case 1 : jo name wala funtion hai vo 2 second bad execute hoga.
+//let timerMy  = setTimeout(name,2000); // case 2: isme variable lgaker example ke tor pr ' let timerMy' kr ke 
+//console.log("nibu lly")
+//console.log(`Timer ID = ${timerMy}`);
+//clearTimeout(timerMy); // is funtion ka use kr ke hm uske execution time se phle rok skte hai. age na visvas ho to (case 2) or is function ko ak sat execute krwa ke dekhlo.
+let stopInterval = setInterval(name,1000);
+// console.log("nibu lly345")
+ setTimeout(() => clearInterval(stopInterval),5000);
+
+// console.log("nibu lly3454444444");
+
+
+
+
+  </script>
+</body>
+</html>
